@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{60B4E96F-874A-81A7-BC9F-D8E1CFBAC2F2}") = "Chatbot", "Assembly-CSharp-firstpass.csproj", "{103965BA-4124-4304-FEBA-69138FD14344}"
+EndProject
+Project("{60B4E96F-874A-81A7-BC9F-D8E1CFBAC2F2}") = "Chatbot", "Assembly-CSharp.csproj", "{AD5DE746-272B-519A-5093-879C21670BF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{103965BA-4124-4304-FEBA-69138FD14344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{103965BA-4124-4304-FEBA-69138FD14344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{103965BA-4124-4304-FEBA-69138FD14344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{103965BA-4124-4304-FEBA-69138FD14344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD5DE746-272B-519A-5093-879C21670BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5DE746-272B-519A-5093-879C21670BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5DE746-272B-519A-5093-879C21670BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5DE746-272B-519A-5093-879C21670BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
