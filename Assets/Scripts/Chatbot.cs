@@ -34,6 +34,7 @@ public class Chatbot : MonoBehaviour
 	void Start () 
 	{
 		_animator = GetComponent<Animator> ();
+        faceUpdate = this.gameObject.GetComponent<FaceUpdate>();
 	}
 
 	void Update () {
@@ -92,4 +93,14 @@ public class Chatbot : MonoBehaviour
 		_animator.SetTrigger ("Send");
 
 	}
+
+    public void OnCallSmile()
+    {
+        faceUpdate.OnCallChangeFace("smile@sd_hmd");
+    }
+
+    public void OnCallDamaged()
+    {
+        faceUpdate.OnCallChangeFace("damaged@sd_hmd");
+    }
 }
