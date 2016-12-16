@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{EBFCC66B-D866-3E45-4C5F-90424AD0B903}") = "ChatUnityChan-master", "Assembly-CSharp-firstpass.csproj", "{41D5E5DC-0E96-4505-C91C-F391E1D7B43A}"
+EndProject
+Project("{EBFCC66B-D866-3E45-4C5F-90424AD0B903}") = "ChatUnityChan-master", "Assembly-CSharp.csproj", "{4A7FBB98-3D64-DF7F-5EFA-238C70EB9B8F}"
+EndProject
+Project("{EBFCC66B-D866-3E45-4C5F-90424AD0B903}") = "ChatUnityChan-master", "Assembly-CSharp-Editor.csproj", "{C23E9A99-AD54-5D1C-DBF4-97044C9B9E25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41D5E5DC-0E96-4505-C91C-F391E1D7B43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D5E5DC-0E96-4505-C91C-F391E1D7B43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D5E5DC-0E96-4505-C91C-F391E1D7B43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D5E5DC-0E96-4505-C91C-F391E1D7B43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A7FBB98-3D64-DF7F-5EFA-238C70EB9B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A7FBB98-3D64-DF7F-5EFA-238C70EB9B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A7FBB98-3D64-DF7F-5EFA-238C70EB9B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A7FBB98-3D64-DF7F-5EFA-238C70EB9B8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C23E9A99-AD54-5D1C-DBF4-97044C9B9E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23E9A99-AD54-5D1C-DBF4-97044C9B9E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C23E9A99-AD54-5D1C-DBF4-97044C9B9E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C23E9A99-AD54-5D1C-DBF4-97044C9B9E25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

@@ -10,6 +10,8 @@ public class HTTP : MonoBehaviour {
 	private string DOCOMO_ENDPOINT = "https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue";
 
 
+
+
 	//Sigleton
 	private HTTP(){}
 
@@ -33,16 +35,16 @@ public class HTTP : MonoBehaviour {
 		return www;
 	}
 
-	public static WWW Post(string url, string input, Action<WWW> onSuccess, Action<WWW> onError = null)
+	public static WWW Post(string url, string input, string id, Action<WWW> onSuccess, Action<WWW> onError = null)
 	{
-		Debug.Log (url);
+		Debug.Log ("IDは"+id);
 		var data = new 
 		{
-			utt = input
+			utt = input,
+			context = id
 		};
-
+		Debug.Log("data is :" + data);
 		string json = LitJson.JsonMapper.ToJson (data);
-		Debug.Log (json);
 
 		var send = System.Text.Encoding.Unicode.GetBytes (json);
 		WWWForm form = new WWWForm ();
