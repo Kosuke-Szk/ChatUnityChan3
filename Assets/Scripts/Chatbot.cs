@@ -65,15 +65,13 @@ public class Chatbot : MonoBehaviour
 
 		HTTP.Post (url, sendMessage, contextId,www => {
 			Debug.Log (www.text);
-			Vector3 pos = parentObject.transform.position;
-			GameObject prefab = (GameObject)Instantiate(fukidashi, pos, Quaternion.identity);
-			prefab.transform.parent = parentObject.transform;
+
+			CreateFukidashi();
+
 			Text botTalk =  GameObject.Find("BotTalk").GetComponent<Text>();
 			var resJson = (IDictionary)MiniJSON.Json.Deserialize(www.text);
 			string botResponse = (string)resJson["utt"];
-			Debug.Log("1 : "+contextId);
 			contextId = (string)resJson["context"];
-			Debug.Log("2 :"+contextId);
 			Debug.Log(botResponse);
 			botTalk.text = botResponse;
 			SpeakScript.Speak(botResponse);
@@ -99,6 +97,11 @@ public class Chatbot : MonoBehaviour
 			var resJson = (IDictionary)MiniJSON.Json.Deserialize(www.text);
 			string botResponse = (string)resJson["title"];
 			Debug.Log (botResponse);
+
+//			APIのテキストをユニティちゃんから出力
+			CreateFukidashi ();
+			Text botTalk =  GameObject.Find("BotTalk").GetComponent<Text>();
+			botTalk.text = botResponse;
 		} else 
 		{
 			Debug.Log ("Get Failure");
@@ -110,6 +113,13 @@ public class Chatbot : MonoBehaviour
 	{
 		StartCoroutine (Get (Local_webhook));
 
+	}
+
+	private void CreateFukidashi()
+	{
+		Vector3 pos = parentObject.transform.position;
+		GameObject prefab = (GameObject)Instantiate(fukidashi, pos, Quaternion.identity);
+		prefab.transform.parent = parentObject.transform;
 	}
 
 	public void ChangeAnimation()
