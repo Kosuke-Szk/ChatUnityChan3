@@ -15,7 +15,7 @@ public class Chatbot : MonoBehaviour
 	public InputField inputField;
 	private string DOCOMO_API_KEY = "6255615075614d4a3455552f57546d583366686d3332314746456e6e49714a49464d43325a667561685a33";
 	private string DOCOMO_ENDPOINT = "https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue";
-	private string Local_webhook = "http://localhost:8000/api/entries/1/";
+	private string Local_webhook = "http://localhost:8000/api/articles/1.json";
 	private string API_Post_Url {get { return "https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue?=6255615075614d4a3455552f57546d583366686d3332314746456e6e49714a49464d43325a667561685a33";}}
 	private Hashtable Headers {
 		get { 
@@ -91,24 +91,25 @@ public class Chatbot : MonoBehaviour
 		header.Add ("Accept-Language", "ja");
 		header.Add ("Content-Type", "application/json");
 
-
 		WWW www = new WWW (url);
 		yield return www;
 
 		if (www.error == null) {
 			Debug.Log ("Get Success"+www.text);
 			var resJson = (IDictionary)MiniJSON.Json.Deserialize(www.text);
-			string botResponse = (string)resJson["body"];
+			string botResponse = (string)resJson["title"];
 			Debug.Log (botResponse);
 		} else 
 		{
 			Debug.Log ("Get Failure");
+			string botResponse = "";
 		}
 	}
 
 	public void OnCallGetMethod()
 	{
-		StartCoroutine (Get ("http://localhost:8000/api/entries/1/"));
+		StartCoroutine (Get (Local_webhook));
+
 	}
 
 	public void ChangeAnimation()
