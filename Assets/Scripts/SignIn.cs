@@ -11,6 +11,7 @@ public class SignIn : MonoBehaviour {
 	public InputField _nameInput;
 	public Text _confirmMessage;
 	public GameObject loginConfirmPanel;
+	public GameObject loginAllertPanel;
 	public static string inputname = "";
 
 	//getter
@@ -76,6 +77,10 @@ public class SignIn : MonoBehaviour {
 			}
 			else{
 				Debug.Log("ユーザー登録してください");
+				if(!loginAllertPanel.activeSelf)
+				{
+					loginAllertPanel.gameObject.SetActive(true);
+				}
 			}
 		}, www => {
 			Debug.Log(www.error);

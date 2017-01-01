@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AllertPanel.cs" />
      <Compile Include="Assets\Locomotion Setup\Locomotion\Scripts\Locomotion.cs" />
      <Compile Include="Assets\Locomotion Setup\Scripts\JoystickToEvents.cs" />
      <Compile Include="Assets\Locomotion Setup\Scripts\LocomotionPlayer.cs" />
