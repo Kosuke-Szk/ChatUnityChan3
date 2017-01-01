@@ -49,6 +49,7 @@
      <Compile Include="Assets\Locomotion Setup\Locomotion\Scripts\Locomotion.cs" />
      <Compile Include="Assets\Locomotion Setup\Scripts\JoystickToEvents.cs" />
      <Compile Include="Assets\Locomotion Setup\Scripts\LocomotionPlayer.cs" />
+     <Compile Include="Assets\LoginConfirm.cs" />
      <Compile Include="Assets\Scripts\Chatbot.cs" />
      <Compile Include="Assets\Scripts\FaceChange.cs" />
      <Compile Include="Assets\Scripts\FaceUpdate.cs" />

@@ -9,6 +9,15 @@ public class SignIn : MonoBehaviour {
 	private string localhostUrl = "http://localhost:8000/api/articles.json";
 	private string localhostTesturl = "http://127.0.0.1:8000/titles";
 	public InputField _nameInput;
+	public Text _confirmMessage;
+	public GameObject loginConfirmPanel;
+	public static string inputname = "";
+
+	//getter
+	public static string getInputName()
+	{
+		return inputname;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +53,7 @@ public class SignIn : MonoBehaviour {
 
 	public void OnPressLogInBtn()
 	{
-		string inputname = _nameInput.text;
+		inputname = _nameInput.text;
 		bool isName = false;
 		HTTP.Get (localhostTesturl, www => {
 			string[] stNames = www.text.Split(',');
@@ -59,6 +68,11 @@ public class SignIn : MonoBehaviour {
 			if(isName)
 			{
 				Debug.Log("こんにちは"+inputname+ "さん");
+				_confirmMessage.text = "こんにちは!"+inputname+ "さん";
+				if (!loginConfirmPanel.activeSelf)
+				{
+					loginConfirmPanel.gameObject.SetActive(true);
+				}
 			}
 			else{
 				Debug.Log("ユーザー登録してください");

@@ -45,6 +45,13 @@ public class Chatbot : MonoBehaviour
 	{
 		_animator = GetComponent<Animator> ();
 		unitySaveLog = "\n";
+		string userName = SignIn.getInputName ();
+		Debug.Log (userName);
+		string firstSpeak = "こんにちは！" + userName;
+		CreateFukidashi();
+		Text botTalk =  GameObject.Find("BotTalk").GetComponent<Text>();
+		botTalk.text = firstSpeak;
+		SpeakScript.Speak (firstSpeak);
 	}
 
 	void Update () {
@@ -67,7 +74,6 @@ public class Chatbot : MonoBehaviour
 			Debug.Log (www.text);
 
 			CreateFukidashi();
-
 			Text botTalk =  GameObject.Find("BotTalk").GetComponent<Text>();
 			var resJson = (IDictionary)MiniJSON.Json.Deserialize(www.text);
 			string botResponse = (string)resJson["utt"];
