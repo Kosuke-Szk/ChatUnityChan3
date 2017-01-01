@@ -35,3 +35,7 @@
 /Users/kosuke/Desktop/ChatUnityChan-master/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/kosuke/Desktop/ChatUnityChan-master/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/kosuke/Desktop/ChatUnityChan-master/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/kosuke/Desktop/ChatUnityChan-master/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/kosuke/Desktop/ChatUnityChan-master/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/kosuke/Desktop/ChatUnityChan-master/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/kosuke/Desktop/ChatUnityChan-master/Temp/bin/Debug/UnityEngine.VR.dll

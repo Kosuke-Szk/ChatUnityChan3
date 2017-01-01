@@ -102,6 +102,7 @@ public class Chatbot : MonoBehaviour
 			CreateFukidashi ();
 			Text botTalk =  GameObject.Find("BotTalk").GetComponent<Text>();
 			botTalk.text = botResponse;
+
 		} else 
 		{
 			Debug.Log ("Get Failure");

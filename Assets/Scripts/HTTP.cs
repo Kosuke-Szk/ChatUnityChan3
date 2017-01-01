@@ -58,6 +58,46 @@ public class HTTP : MonoBehaviour {
 		return www;
 	}
 
+	public static WWW ServerPost(string url, string writerInput, string titleInput, string contentsInput, Action<WWW> onSuccess, Action<WWW> onError = null )
+	{
+		var data = new{
+			writer = writerInput,
+			title = titleInput,
+			contents = contentsInput
+		};
+		string json = LitJson.JsonMapper.ToJson (data);
+
+//		string json = "writer=" + writerInput + "&title=" + titleInput + "&contents=" + contentsInput;
+
+		var send = System.Text.Encoding.Unicode.GetBytes (json);
+		Debug.Log (send);
+		WWWForm form = new WWWForm ();
+		var headers = form.headers;
+		headers["Content-Type"]= "application/json";
+
+		Debug.Log (headers ["Content-Type"]);
+
+		WWW www = new WWW (url, send, headers);
+		Instance.StartCoroutine (Instance.WaitForRequest (www, onSuccess, onError));
+		return www;
+	}
+
+	public static WWW TestPost(string url, string writerInput, string titleInput, string contentsInput,Action<WWW> onSuccess, Action<WWW> onError = null)
+	{
+		WWWForm form = new WWWForm ();
+		form.AddField ("writer", writerInput);
+		form.AddField ("title", titleInput);
+		form.AddField ("contents", contentsInput);
+		WWW www = new WWW (url, form);
+		Instance.StartCoroutine (Instance.WaitForRequest (www, onSuccess, onError));
+		return www;
+	}
+//
+//	public static WWW LoginPOST(string url, string name)
+//	{
+//		
+//	}
+
 	IEnumerator WaitForRequest(WWW www, Action<WWW> onSuccess, Action<WWW> onError)
 	{
 		yield return www;
