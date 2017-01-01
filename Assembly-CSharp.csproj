@@ -46,11 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AllertPanel.cs" />
      <Compile Include="Assets\Locomotion Setup\Locomotion\Scripts\Locomotion.cs" />
      <Compile Include="Assets\Locomotion Setup\Scripts\JoystickToEvents.cs" />
      <Compile Include="Assets\Locomotion Setup\Scripts\LocomotionPlayer.cs" />
-     <Compile Include="Assets\LoginConfirm.cs" />
+     <Compile Include="Assets\Scripts\AllertPanel.cs" />
      <Compile Include="Assets\Scripts\Chatbot.cs" />
      <Compile Include="Assets\Scripts\FaceChange.cs" />
      <Compile Include="Assets\Scripts\FaceUpdate.cs" />
@@ -58,6 +57,7 @@
      <Compile Include="Assets\Scripts\HTTP.cs" />
      <Compile Include="Assets\Scripts\LogPanel.cs" />
      <Compile Include="Assets\Scripts\Login.cs" />
+     <Compile Include="Assets\Scripts\LoginConfirm.cs" />
      <Compile Include="Assets\Scripts\MainController.cs" />
      <Compile Include="Assets\Scripts\MiniJSON.cs" />
      <Compile Include="Assets\Scripts\SignIn.cs" />
@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Smile.cs" />
      <Compile Include="Assets\Scripts\SpeakScript.cs" />
      <Compile Include="Assets\Scripts\Title.cs" />
+     <Compile Include="Assets\ScrollContent.cs" />
      <Compile Include="Assets\UnityChan\Scripts\AutoBlink.cs" />
      <Compile Include="Assets\UnityChan\Scripts\AutoBlinkforSD.cs" />
      <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />

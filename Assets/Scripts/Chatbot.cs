@@ -41,17 +41,24 @@ public class Chatbot : MonoBehaviour
 
 	private string contextId = "";
 
+	private ScrollContent _scrollContent;
+
+	GameObject content;
+
 	void Start () 
 	{
 		_animator = GetComponent<Animator> ();
 		unitySaveLog = "\n";
 		string userName = SignIn.getInputName ();
 		Debug.Log (userName);
-		string firstSpeak = "こんにちは！" + userName;
+		string firstSpeak = "こんにちは！" + userName+ "さん";
 		CreateFukidashi();
 		Text botTalk =  GameObject.Find("BotTalk").GetComponent<Text>();
 		botTalk.text = firstSpeak;
 		SpeakScript.Speak (firstSpeak);
+
+		content = GameObject.Find ("Content");
+
 	}
 
 	void Update () {
@@ -73,6 +80,8 @@ public class Chatbot : MonoBehaviour
 		HTTP.Post (url, sendMessage, contextId,www => {
 			Debug.Log (www.text);
 
+			StartCoroutine(SetBoolSmile());
+
 			CreateFukidashi();
 			Text botTalk =  GameObject.Find("BotTalk").GetComponent<Text>();
 			var resJson = (IDictionary)MiniJSON.Json.Deserialize(www.text);
@@ -82,7 +91,10 @@ public class Chatbot : MonoBehaviour
 			botTalk.text = botResponse;
 			SpeakScript.Speak(botResponse);
 			unitySaveLog = WriteUnityChanLog(botResponse, unitySaveLog);
-			ChangeAnimation();
+
+			ScrollContent _scrollContent = content.GetComponent<ScrollContent> ();
+			_scrollContent.CreateNode(botResponse);
+
 		}, www => {
 			Debug.Log (www.error);
 		});
@@ -119,7 +131,13 @@ public class Chatbot : MonoBehaviour
 	public void OnCallGetMethod()
 	{
 		StartCoroutine (Get (Local_webhook));
+	}
 
+	IEnumerator SetBoolSmile()
+	{
+		_animator.SetBool ("Smile", true);
+		yield return new WaitForSeconds(2);
+		_animator.SetBool ("Smile", false);
 	}
 
 	private void CreateFukidashi()
@@ -129,11 +147,6 @@ public class Chatbot : MonoBehaviour
 		prefab.transform.parent = parentObject.transform;
 	}
 
-	public void ChangeAnimation()
-	{
-		_animator.SetTrigger ("Send");
-
-	}
 
 	public string WriteUserLog(string input, string saveLog)
 	{
@@ -173,7 +186,6 @@ public class Chatbot : MonoBehaviour
 			botTalk.text = botResponse;
 			SpeakScript.Speak(botResponse);
 			unitySaveLog = WriteUnityChanLog(botResponse, unitySaveLog);
-			ChangeAnimation();
 		}, www => {
 			Debug.Log (www.error);
 		});
