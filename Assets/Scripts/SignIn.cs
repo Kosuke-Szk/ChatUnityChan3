@@ -14,6 +14,9 @@ public class SignIn : MonoBehaviour {
 	public GameObject loginAllertPanel;
 	public static string inputname = "";
 
+	public static string URL = "";
+
+
 	//getter
 	public static string getInputName()
 	{
@@ -38,7 +41,7 @@ public class SignIn : MonoBehaviour {
 
 	public void OnPressTestBtn()
 	{
-		HTTP.Get (localhostTesturl, www => {
+		HTTP.Get (URL, www => {
 			Debug.Log(www.text);
 			string[] stArray = www.text.Split(',');
 			for (int i = 0; i < stArray.Length; i++)
@@ -56,7 +59,7 @@ public class SignIn : MonoBehaviour {
 	{
 		inputname = _nameInput.text;
 		bool isName = false;
-		HTTP.Get (localhostTesturl, www => {
+		HTTP.Get (URL, www => {
 			string[] stNames = www.text.Split(',');
 			for (int i = 0; i< stNames.Length; i++)
 			{

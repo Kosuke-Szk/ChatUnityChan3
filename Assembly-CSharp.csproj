@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\LoginConfirm.cs" />
      <Compile Include="Assets\Scripts\MainController.cs" />
      <Compile Include="Assets\Scripts\MiniJSON.cs" />
+     <Compile Include="Assets\Scripts\ScrollContent.cs" />
      <Compile Include="Assets\Scripts\SignIn.cs" />
      <Compile Include="Assets\Scripts\SignInPopup.cs" />
      <Compile Include="Assets\Scripts\SignUp.cs" />
@@ -67,7 +68,6 @@
      <Compile Include="Assets\Scripts\Smile.cs" />
      <Compile Include="Assets\Scripts\SpeakScript.cs" />
      <Compile Include="Assets\Scripts\Title.cs" />
-     <Compile Include="Assets\ScrollContent.cs" />
      <Compile Include="Assets\UnityChan\Scripts\AutoBlink.cs" />
      <Compile Include="Assets\UnityChan\Scripts\AutoBlinkforSD.cs" />
      <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />

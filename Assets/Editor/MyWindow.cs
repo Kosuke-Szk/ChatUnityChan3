@@ -6,7 +6,9 @@ using UnityEditor;
 public class MyWindow: EditorWindow 
 {
 
-	string myString = "http://127.0.0.1:8000/titles";
+	string LocalHostTitles = "http://127.0.0.1:8000/titles";
+	string LocalHostArticles = "http://localhost:8000/api/articles";
+	private static string currentUrl = "";
 	bool groupEnabled;
 	bool myBool = true;
 	float myFloat = 1.23f;
@@ -22,13 +24,19 @@ public class MyWindow: EditorWindow
 		GUILayout.Label ("Webhook URL Settings", EditorStyles.boldLabel);
 		if(GUILayout.Button("http://127.0.0.1:8000/titles"))
 		{
-			Debug.Log("ボタン押したよ！");
+			currentUrl = LocalHostTitles;
+			currentUrl = EditorGUILayout.TextField ("LocalhostURL", currentUrl);
+			SignIn.URL = currentUrl;
+			Debug.Log ("URLは" + SignIn.URL.ToString());
 		}
 		if(GUILayout.Button("http://localhost:8000/api/articles"))
 		{
-			Debug.Log("ボタン押したよ！");
+			currentUrl = LocalHostArticles;
+			currentUrl = EditorGUILayout.TextField ("LocalhostURL", currentUrl);
+			SignIn.URL = currentUrl;
+			Debug.Log ("URLは" + SignIn.URL.ToString());
 		}
-		myString = EditorGUILayout.TextField ("LocalhostURL", myString);
+		currentUrl = EditorGUILayout.TextField ("LocalhostURL", currentUrl);
 
 		groupEnabled = EditorGUILayout.BeginToggleGroup ("Optional Settings", groupEnabled);
 		myBool = EditorGUILayout.Toggle ("Toggle", myBool);
