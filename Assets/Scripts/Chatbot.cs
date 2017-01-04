@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using LitJson;
 using MiniJSON;
 using UnityChan;
+using UnityEngine.SceneManagement;
 
 
 public class Chatbot : MonoBehaviour 
@@ -44,6 +45,7 @@ public class Chatbot : MonoBehaviour
 	private ScrollContent _scrollContent;
 
 	public GameObject content;
+	public GameObject confirmHomePanel;
 
 	void Start () 
 	{
@@ -128,9 +130,25 @@ public class Chatbot : MonoBehaviour
 		}
 	}
 
-	public void OnCallGetMethod()
+	public void OnPressHomeBtn()
 	{
-		StartCoroutine (Get (Local_webhook));
+		if(!confirmHomePanel.activeSelf)
+		{
+			confirmHomePanel.gameObject.SetActive (true);
+		}
+	}
+
+	public void OkReturnToHome()
+	{
+		SceneManager.LoadScene ("Login");
+	}
+
+	public void CancelREturnToHome()
+	{
+		if(confirmHomePanel.activeSelf)
+		{
+			confirmHomePanel.gameObject.SetActive (false);
+		}
 	}
 
 	IEnumerator SetBoolSmile()

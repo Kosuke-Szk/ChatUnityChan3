@@ -49,6 +49,7 @@
      <Compile Include="Assets\Locomotion Setup\Locomotion\Scripts\Locomotion.cs" />
      <Compile Include="Assets\Locomotion Setup\Scripts\JoystickToEvents.cs" />
      <Compile Include="Assets\Locomotion Setup\Scripts\LocomotionPlayer.cs" />
+     <Compile Include="Assets\MagicCircle.cs" />
      <Compile Include="Assets\Scripts\AllertPanel.cs" />
      <Compile Include="Assets\Scripts\Chatbot.cs" />
      <Compile Include="Assets\Scripts\FaceChange.cs" />
@@ -130,6 +131,7 @@
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\StreamingAssets\QCAR\UnityChanFloor.xml" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\readme.txt" />
+     <None Include="Assets\ColorfulButtons\Credits.txt" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
