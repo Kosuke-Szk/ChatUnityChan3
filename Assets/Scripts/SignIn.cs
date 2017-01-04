@@ -59,34 +59,33 @@ public class SignIn : MonoBehaviour {
 	{
 		inputname = _nameInput.text;
 		bool isName = false;
-		HTTP.Get (URL, www => {
-			string[] stNames = www.text.Split(',');
-			for (int i = 0; i< stNames.Length; i++)
-			{
-				Debug.Log(stNames[i]);
-				if(inputname == stNames[i])
-				{
-					isName = true;
+
+		if (inputname != "") {
+			HTTP.Get (URL, www => {
+				string[] stNames = www.text.Split (',');
+				for (int i = 0; i < stNames.Length; i++) {
+					Debug.Log (stNames [i]);
+					if (inputname == stNames [i]) {
+						isName = true;
+					}
 				}
-			}
-			if(isName)
-			{
-				Debug.Log("こんにちは"+inputname+ "さん");
-				_confirmMessage.text = "こんにちは!"+inputname+ "さん";
-				if (!loginConfirmPanel.activeSelf)
-				{
-					loginConfirmPanel.gameObject.SetActive(true);
+				if (isName) {
+					Debug.Log ("こんにちは" + inputname + "さん");
+					_confirmMessage.text = "こんにちは!" + inputname + "さん";
+					if (!loginConfirmPanel.activeSelf) {
+						loginConfirmPanel.gameObject.SetActive (true);
+					}
+				} else {
+					Debug.Log ("ユーザー登録してください");
+					if (!loginAllertPanel.activeSelf) {
+						loginAllertPanel.gameObject.SetActive (true);
+					}
 				}
-			}
-			else{
-				Debug.Log("ユーザー登録してください");
-				if(!loginAllertPanel.activeSelf)
-				{
-					loginAllertPanel.gameObject.SetActive(true);
-				}
-			}
-		}, www => {
-			Debug.Log(www.error);
-		});
+			}, www => {
+				Debug.Log (www.error);
+			});
+		} else {
+			return;
+		}
 	}
 }

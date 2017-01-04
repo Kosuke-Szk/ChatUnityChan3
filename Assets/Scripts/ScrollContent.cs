@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class ScrollContent : MonoBehaviour {
 
 	[SerializeField]
-	RectTransform prefab = null;
+	RectTransform unityNode = null;
+
+	[SerializeField]
+	RectTransform userNode = null;
 
 	public GameObject _chatLog;
 
@@ -20,12 +23,20 @@ public class ScrollContent : MonoBehaviour {
 		
 	}
 
-	public void CreateNode(string talk)
+	public void CreateUnityNode(string talk)
 	{
-		var item = GameObject.Instantiate (prefab) as RectTransform;
+		var item = GameObject.Instantiate (unityNode) as RectTransform;
 		item.SetParent (transform, false);
 		var text = item.GetComponentInChildren<Text> ();
 		text.text = "UnityChan: " + talk;
+	}
+
+	public void CreateUserNode(string talk)
+	{
+		var item = GameObject.Instantiate (userNode) as RectTransform;
+		item.SetParent (transform, false);
+		var text = item.GetComponentInChildren<Text> ();
+		text.text = "あなた: " + talk;
 	}
 
 	public void OnPressCloseBtn()

@@ -1,20 +1,24 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Editor/MyWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/Android/AndroidManifest.xml">
     <Files>
-      <File FileName="Assets/Scripts/Chatbot.cs" Line="96" Column="1" />
+      <File FileName="Assets/Editor/MyWindow.cs" Line="39" Column="71" />
+      <File FileName="Assets/Scripts/Chatbot.cs" Line="59" Column="3" />
       <File FileName="Assets/Scripts/SignUp.cs" Line="11" Column="74" />
       <File FileName="Assets/Scripts/LogPanel.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/HTTP.cs" Line="98" Column="3" />
-      <File FileName="Assets/Scripts/SignIn.cs" Line="5" Column="22" />
+      <File FileName="Assets/Scripts/HTTP.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SignIn.cs" Line="63" Column="18" />
       <File FileName="Assets/Scripts/SignInPopup.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/FaceUpdate.cs" Line="16" Column="37" />
-      <File FileName="Assets/Editor/MyWindow.cs" Line="16" Column="2" />
+      <File FileName="Assets/Scripts/SampleWebView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/WebviewSample.cs" Line="4" Column="18" />
+      <File FileName="Assets/Plugins/Android/AndroidManifest.xml" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/kosuke/Desktop/ChatUnityChan-master/Assets/SignUp.cs" line="27" column="1" />
+      <Breakpoint file="/Users/kosuke/Desktop/ChatUnityChan-master/Assets/Scripts/Chatbot.cs" line="94" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

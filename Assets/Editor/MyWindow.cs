@@ -37,10 +37,5 @@ public class MyWindow: EditorWindow
 			Debug.Log ("URLは" + SignIn.URL.ToString());
 		}
 		currentUrl = EditorGUILayout.TextField ("LocalhostURL", currentUrl);
-
-		groupEnabled = EditorGUILayout.BeginToggleGroup ("Optional Settings", groupEnabled);
-		myBool = EditorGUILayout.Toggle ("Toggle", myBool);
-		myFloat = EditorGUILayout.Slider ("Slider", myFloat, -3, 3);
-		EditorGUILayout.EndToggleGroup ();
 	}
 }

@@ -43,7 +43,7 @@ public class Chatbot : MonoBehaviour
 
 	private ScrollContent _scrollContent;
 
-	GameObject content;
+	public GameObject content;
 
 	void Start () 
 	{
@@ -57,7 +57,6 @@ public class Chatbot : MonoBehaviour
 		botTalk.text = firstSpeak;
 		SpeakScript.Speak (firstSpeak);
 
-		content = GameObject.Find ("Content");
 
 	}
 
@@ -74,7 +73,9 @@ public class Chatbot : MonoBehaviour
 		userSpeech.transform.parent = _userSpeechParent.transform;
 		Text userTalk = GameObject.Find ("UserTalk").GetComponent<Text> ();
 		userTalk.text = sendMessage;
-		userSaveLog = WriteUserLog (sendMessage, userSaveLog);
+//		userSaveLog = WriteUserLog (sendMessage, userSaveLog);
+		ScrollContent _scrollContent = content.GetComponent<ScrollContent> ();
+		_scrollContent.CreateUserNode (sendMessage);
 
 
 		HTTP.Post (url, sendMessage, contextId,www => {
@@ -90,10 +91,9 @@ public class Chatbot : MonoBehaviour
 			Debug.Log(botResponse);
 			botTalk.text = botResponse;
 			SpeakScript.Speak(botResponse);
-			unitySaveLog = WriteUnityChanLog(botResponse, unitySaveLog);
+//			unitySaveLog = WriteUnityChanLog(botResponse, unitySaveLog);
 
-			ScrollContent _scrollContent = content.GetComponent<ScrollContent> ();
-			_scrollContent.CreateNode(botResponse);
+			_scrollContent.CreateUnityNode(botResponse);
 
 		}, www => {
 			Debug.Log (www.error);
