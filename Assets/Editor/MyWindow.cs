@@ -5,9 +5,9 @@ using UnityEditor;
 
 public class MyWindow: EditorWindow 
 {
-
-	string LocalHostTitles = "http://127.0.0.1:8000/titles";
-	string LocalHostArticles = "http://localhost:8000/api/articles";
+	string LocalHostv3 = "http://127.0.0.1:8000/api/accounts";
+	string SignInHost = "http://127.0.0.1:8000/usernames";
+	string SignInHerokuHost = "https://afternoon-headland-57954.herokuapp.com/api/accounts/";
 	private static string currentUrl = "";
 	bool groupEnabled;
 	bool myBool = true;
@@ -22,18 +22,28 @@ public class MyWindow: EditorWindow
 	void OnGUI()
 	{
 		GUILayout.Label ("Webhook URL Settings", EditorStyles.boldLabel);
-		if(GUILayout.Button("http://127.0.0.1:8000/titles"))
+		if(GUILayout.Button("http://127.0.0.1:8000/api/accounts"))
 		{
-			currentUrl = LocalHostTitles;
+			currentUrl = LocalHostv3;
 			currentUrl = EditorGUILayout.TextField ("LocalhostURL", currentUrl);
 			SignIn.URL = currentUrl;
+			SignUp.localhostUrl = currentUrl;
 			Debug.Log ("URLは" + SignIn.URL.ToString());
 		}
-		if(GUILayout.Button("http://localhost:8000/api/articles"))
+		if(GUILayout.Button("http://127.0.0.1:8000/usernames"))
 		{
-			currentUrl = LocalHostArticles;
+			currentUrl = SignInHost;
 			currentUrl = EditorGUILayout.TextField ("LocalhostURL", currentUrl);
 			SignIn.URL = currentUrl;
+			SignUp.localhostUrl = currentUrl;
+			Debug.Log ("URLは" + SignIn.URL.ToString());
+		}
+		if(GUILayout.Button("Staging環境に設定"))
+		{
+			currentUrl = SignInHerokuHost;
+			currentUrl = EditorGUILayout.TextField ("LocalhostURL", currentUrl);
+//			SignIn.URL = currentUrl;
+			SignUp.localhostUrl = currentUrl;
 			Debug.Log ("URLは" + SignIn.URL.ToString());
 		}
 		currentUrl = EditorGUILayout.TextField ("LocalhostURL", currentUrl);

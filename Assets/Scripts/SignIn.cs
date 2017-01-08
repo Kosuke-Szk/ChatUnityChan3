@@ -6,15 +6,13 @@ using UnityEngine.UI;
 
 public class SignIn : MonoBehaviour {
 
-	private string localhostUrl = "http://localhost:8000/api/articles.json";
-	private string localhostTesturl = "http://127.0.0.1:8000/titles";
 	public InputField _nameInput;
 	public Text _confirmMessage;
 	public GameObject loginConfirmPanel;
 	public GameObject loginAllertPanel;
 	public static string inputname = "";
 
-	public static string URL = "";
+	public static string URL = "https://afternoon-headland-57954.herokuapp.com/usernames";
 
 
 	//getter
@@ -30,12 +28,6 @@ public class SignIn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-
-
-	public void OnPressLoginBtn()
-	{
 		
 	}
 

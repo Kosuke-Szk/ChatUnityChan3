@@ -63,15 +63,15 @@ public class WebViewObject : MonoBehaviour
 #elif UNITY_WEBPLAYER
 #endif
 	
-	public bool IsKeyboardVisible {
-		get {
-#if UNITY_ANDROID && !UNITY_EDITOR
-			return mIsKeyboardVisible;
-#else
-			return TouchScreenKeyboard.visible;
-#endif
-		}
-	}
+//	public bool IsKeyboardVisible {
+//		get {
+//#if UNITY_ANDROID && !UNITY_EDITOR
+//			return mIsKeyboardVisible;
+//#else
+//			return TouchScreenKeyboard.visible;
+//#endif
+//		}
+//	}
 
 #if UNITY_EDITOR || UNITY_STANDALONE_OSX
 	[DllImport("WebView")]

@@ -5,26 +5,14 @@ using UnityEngine.UI;
 
 public class SignUp : MonoBehaviour {
 
-	public InputField _titleField;
-	public InputField _writerNumber;
-	public InputField _contentsField;
-	private string localhostUrl = "http://localhost:8000/api/articles.json";
+	public InputField _nameField;
+	public InputField _passwordField;
+	public static string localhostUrl = "http://127.0.0.1:8000/api/accounts/";
 
-	// Use this for initialization
-	void Start () 
+	public void SendNamev3()
 	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
-
-	public void SendName()
-	{
-		HTTP.TestPost (localhostUrl, _writerNumber.text, _titleField.text, _contentsField.text,www => {
+		Debug.Log (localhostUrl);
+		HTTP.Postv3 (localhostUrl, _nameField.text, _passwordField.text, www => {
 			Debug.Log(www.text);
 		}, www => {
 			Debug.Log(www.error);

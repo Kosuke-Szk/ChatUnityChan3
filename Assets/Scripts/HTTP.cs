@@ -92,11 +92,18 @@ public class HTTP : MonoBehaviour {
 		Instance.StartCoroutine (Instance.WaitForRequest (www, onSuccess, onError));
 		return www;
 	}
-//
-//	public static WWW LoginPOST(string url, string name)
-//	{
-//		
-//	}
+
+	public static WWW Postv3(string url,string nameInput, string passwordInput, Action<WWW> onSuccess, Action<WWW> onError = null)
+	{
+		WWWForm form = new WWWForm ();
+		form.AddField ("user", "1");
+		form.AddField ("username", nameInput);
+		form.AddField ("password", passwordInput);
+		WWW www = new WWW (url, form);
+		Instance.StartCoroutine (Instance.WaitForRequest (www, onSuccess, onError));
+		return www;
+	}
+
 
 	IEnumerator WaitForRequest(WWW www, Action<WWW> onSuccess, Action<WWW> onError)
 	{
